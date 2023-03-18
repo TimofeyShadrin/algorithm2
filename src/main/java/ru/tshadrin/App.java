@@ -8,12 +8,18 @@ public class App
 {
     public static void main( String[] args )
     {
-        final RedBlackTree<Integer> tree = new RedBlackTree<>(Integer::compareTo);
+        LeftRedBlackTree tree = new LeftRedBlackTree();
+        tree.insert(5, "Five");
+        tree.insert(10, "Ten");
+        tree.insert(15, "Fifteen");
+        tree.insert(20, "Twenty");
+        tree.insert(25, "Twenty-Five");
+        final RedBlackTree<Integer> redBlackTree = new RedBlackTree<>(Integer::compareTo);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while (true) {
                 try {
                     Integer value = Integer.parseInt(reader.readLine());
-                    tree.add(value);
+                    redBlackTree.add(value);
                     System.out.println("finish");
                 } catch (NumberFormatException exception) {
                     return;
